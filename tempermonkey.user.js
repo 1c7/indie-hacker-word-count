@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Indiehacker.com Word Count
+// @name         Indiehackers.com Word Count
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  Count how many word
