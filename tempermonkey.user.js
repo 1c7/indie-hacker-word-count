@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         Indiehackers.com Word Count
+// @name         Indiehacker.com Word Count
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  Count how many word
 // @author       Github@1c7
 // @match        https://www.indiehackers.com/businesses/*
@@ -19,12 +19,13 @@
         var container = document.createElement('div');
         container.id = 'indiehacker_read_word_count';
         container.style.cssText = `position: fixed;
-top: 0px;
-right: 0px;
+top: 43%;
+left: 0px;
 background: rgba(0,0,0,0.5);
-z-index: 100;
+z-index: 1000;
 padding: 10px 20px;
-border-radius: 4px;`;
+border-radius: 4px;
+font-size:1.4rem;`;
         var intro = document.createElement('div');
         var name = document.createElement('div');
         var p = document.createElement('div');
@@ -46,9 +47,8 @@ border-radius: 4px;`;
 
     function count(){
         var interview = document.querySelector('.interview-body');
-        var h2 = interview.querySelectorAll('h2').length;
+        var h2 = interview.querySelectorAll('h2');
         var p = interview.querySelectorAll('p');
-        //console.log(p);
         var total_word_count = 0;
         for(var i in p) {
             //console.log(p[i]);
@@ -57,11 +57,8 @@ border-radius: 4px;`;
             }
 
         }
-        question_count = h2;
+        question_count = h2.length;
         paragraph_count = p.length;
         word_count = total_word_count;
-        //console.log(h2 + ' Title');
-        //console.log(p.length + ' Paragaph');
-        //console.log(total_word_count + ' Word');
     }
 })();
